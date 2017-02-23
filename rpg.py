@@ -4,6 +4,8 @@ from rpg_monsters import Goblin;
 
 # Hero() is an class (or object) imported from rpg_hero
 hero = Hero();
+print "how many enemies do you want to fight?"
+how_many_enemies = raw_input();
 enemies = [Goblin(), Goblin()];
 
 for enemy in enemies:
@@ -27,7 +29,7 @@ for enemy in enemies:
 			# user has malfunctioned. complain
 			print "Invalid choice %r" % input
 		if enemy.alive():
-			hero.health -= enemy.power
+			enemy.attack(hero);
 	
 	print "Enemy health : %s" % enemy.health
 	print "Hero health : %s" % hero.health
